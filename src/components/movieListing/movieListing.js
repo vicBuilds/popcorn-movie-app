@@ -1,4 +1,4 @@
-//import React, { useState } from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { getAllMovies } from "../../features/movies/movieSlice";
 import { useEffect } from "react";
@@ -14,7 +14,7 @@ const Container = styled.div`
   box-sizing: border-box;
   min-height: 100vh;
   display: flex;
-  justify-content: space-between;
+  //justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
 `;
@@ -22,12 +22,17 @@ const Container = styled.div`
 const MovieListing = () => {
   //const [movies, setMovies] = useState(null);
   const data = useSelector(getAllMovies);
-  useEffect(() => {}, [data]);
-  //console.log(data);
+  const [response, setResponse] = useState("True");
+  useEffect(() => {
+    setResponse(data.Response);
+  }, [data, response]);
+  console.log(data);
 
   return (
     <Container>
-      <h2>{}</h2>
+      <h2 style={{ color: "white" }}>
+        {data.Response === "False" && "Sorry! No Results Found"}
+      </h2>
       {data &&
         data.Response &&
         data.Search &&

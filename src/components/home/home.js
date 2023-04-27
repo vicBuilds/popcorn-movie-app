@@ -6,9 +6,9 @@ import { useDispatch, useSelector } from "react-redux";
 import APIKey from "../../common/apis/movieApiKey";
 import { addMovies, changeKeyword } from "../../features/movies/movieSlice";
 import MovieListing from "../movieListing/movieListing";
+import Loader from "../loader/loader";
 
 const Container = styled.div`
-  padding: 20px;
   width: 100%;
 `;
 
@@ -74,13 +74,13 @@ const Home = () => {
 
   return (
     <Container>
-      <form>
+      <form style={{ height: "40px", width: "100%", margin: "20px" }}>
         <select
           name="type"
           onChange={(e) => {
             handleChangeInChoice(e);
           }}
-          style={{ color: "white", backgroundColor: "black" }}
+          style={{ color: "white", backgroundColor: "black", height: "80%" }}
         >
           <option value="movie">Movies</option>
           <option value="series">Series</option>
@@ -95,6 +95,7 @@ const Home = () => {
             inputValue = e.target.value;
             setInputValue(e.target.value);
           }}
+          style={{ height: "90%", width: "190px", marginRight: "5px" }}
         />
         <Button
           onClick={(e) => {

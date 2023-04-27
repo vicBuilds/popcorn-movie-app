@@ -9,23 +9,25 @@ const ImageContainer = styled.img`
 `;
 
 const CardContainer = styled.div`
-  height: 450px;
+  height: 480px;
   width: 250px;
-  margin: 10px 40px;
+  margin: 20px 40px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  cursor: pointer;
   border: 1px solid white;
   transition: all 0.9s ease;
+
   &:hover {
     transform: scale(1.02);
     letter-spacing: 1px;
   }
 `;
 
-const Title = styled.h5`
+const Title = styled.h3`
   color: white;
-  background-color: #443e3e;
+  background-color: #1d1a1a;
 `;
 
 const MovieCard = (data) => {
@@ -45,7 +47,7 @@ const MovieCard = (data) => {
         key={data.data.title}
       />
       <Title>{data.data.Title}</Title>
-      <Title style={{ fontWeight: "600" }}>{data.data.Year}</Title>
+      <Title style={{ fontWeight: "400" }}>{data.data.Year}</Title>
     </CardContainer>
   );
 };

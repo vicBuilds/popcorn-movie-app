@@ -11,7 +11,8 @@ const Container = styled.div`
   max-width: 100vw;
   overflow: hidden;
   min-height: 100vh;
-  background-color: #191d1d;
+  /* background-color: #191d1d; */
+  background-color: #171716;
 `;
 
 function App() {

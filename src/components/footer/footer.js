@@ -5,7 +5,7 @@ const Container = styled.div`
   position: static;
   bottom: 0px;
   display: flex;
-  height: 50px;
+  height: 70px;
   background-color: #282727;
   color: white;
   display: flex;
@@ -18,8 +18,9 @@ const Container = styled.div`
 const footer = () => {
   return (
     <Container>
-      <div>Movie App</div>
+      <div>PopCorn</div>
       <div>Copyright. All Rights Reserved</div>
+      <div>Designed and Developed by Victor Mitra</div>
     </Container>
   );
 };
